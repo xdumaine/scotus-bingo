@@ -60,9 +60,33 @@ body {
   margin: 5px;
   padding: 10px;
   text-align: center;
+  position: relative;
 }
 
-.pressed{
+.pressed {
   color: #000;
   background-color:#ccc;
+}
+
+.pressed span:after {
+  content: '\2713';
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  padding: 10px;
+  color: #6FB64D;
+  font-size: 30px;
+}
+
+footer {
+  font-size: 12px;
+  text-align: center;
+}
+
+footer a {
+  color: #6089BA;
+}
+
+footer a:visited {
+  color: #2E4764;
 }
