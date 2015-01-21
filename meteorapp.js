@@ -1,4 +1,9 @@
 Cells = new Mongo.Collection("cells");
+Cells.allow({
+  update: function (userId, doc, fields, modifier) {
+    return fields.length === 1 && fields['0'] === 'pressed';
+  }
+});
 
 DefaultCells = [
   { pressed: false, text: "\"TO BE SURE\"" }, 
