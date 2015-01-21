@@ -13,7 +13,7 @@ DefaultCells = [
   { pressed: false, text: "\"5 PERCENT GDP GROWTH\"" }, 
   { pressed: false, text: "\"GOD BLESS AMERICA\"" }, 
   { pressed: false, text: "JOE BIDEN WINKS" }, 
-  { pressed: true,  text: "VOX SOTU 2015" },  
+  { readonly: true, pressed: true,  text: "VOX SOTU 2015" },  
   { pressed: false, text: "JOHN BOEHNER ROLLS HIS EYES" }, 
   { pressed: false, text: "\"LONGEST RUN OF JOB GROWTH\"" }, 
   { pressed: false, text: "\"IT'S ON US\"" }, 
@@ -38,7 +38,8 @@ if (Meteor.isClient) {
   
   Template.cell.events({
     'click': function (event, template) {
-      Cells.update({ _id: this._id}, { $set: { pressed: !this.pressed } })
+      if(!this.readonly)
+        Cells.update({ _id: this._id}, { $set: { pressed: !this.pressed } })
     }
   });
 }
