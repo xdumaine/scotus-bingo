@@ -36,19 +36,13 @@ if (Meteor.isClient) {
     }
   });
   
-  Template.cell.created = function () {
-    this.pressed = new ReactiveVar(this.data.pressed);
-  };
-  
   Template.cell.helpers({
-    pressed: function () {
-      return Template.instance().pressed.get();
-    }
   });
   
   Template.cell.events({
     'click': function (event, template) {
-      template.pressed.set(!template.pressed.get());
+      console.log(this);
+      Cells.update({ _id: this._id}, { $set: { pressed: !this.pressed } })
     }
   });
 }
