@@ -36,12 +36,8 @@ if (Meteor.isClient) {
     }
   });
   
-  Template.cell.helpers({
-  });
-  
   Template.cell.events({
     'click': function (event, template) {
-      console.log(this);
       Cells.update({ _id: this._id}, { $set: { pressed: !this.pressed } })
     }
   });
