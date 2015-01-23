@@ -29,7 +29,7 @@
   </div>
 </template>
 <template name="cell">
-  <div class='cell {{#if pressed}}pressed{{/if}}'>
+  <button class='cell {{#if pressed}}pressed{{/if}} {{#if readonly}}readonly{{/if}}'>
     <span>{{text}}</span>
-  </div>
+  </button>
 </template>

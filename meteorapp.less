@@ -1,5 +1,3 @@
-/* CSS declarations go here */
-
 header {
   display: flex;
 
@@ -42,25 +40,36 @@ body {
   margin: 5px;
   padding: 10px;
 
-  border: 1px solid #000;
+  border: none;
+  outline: none;
   font-weight: bold;
   color: #666;
-}
+  background-color: white;
+  box-shadow: 0 0 5px #700;
+  border-radius: 4px;
 
-.pressed {
-  color: #000;
-  background-color:#ccc;
+  &:not(.readonly) {
+    cursor: pointer;
+  }
 
-  span:after {
-    content: '\2713';
-    position: absolute;
-    bottom: 0px;
-    right: 0;
-    padding: 10px;
-    color: #6FB64D;
-    font-size: 30px;
+  &.pressed {
+    color: #000;
+    background-color:#ccc;
+    box-shadow: 0 0 7px #007 inset;
+
+    span:after {
+      content: '\2713';
+      position: absolute;
+      bottom: 0px;
+      right: 0;
+      padding: 10px;
+      color: #6FB64D;
+      font-size: 14px;
+    }
   }
 }
+
+
 
 footer {
   font-size: 12px;
