@@ -2,13 +2,22 @@ header {
   display: flex;
 
   img {
+    height: 8vw;
     max-height: 35px;
     margin: 10px;
+
+    &:last-of-type {
+      margin-left: auto;
+    }
   }
 
   h1 {
     text-align: center;
     flex-grow: 1;
+    position: absolute;
+    margin: 5px;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -39,6 +48,7 @@ body {
   text-align: center;
   margin: 5px;
   padding: 10px;
+  hyphens: auto;
 
   border: none;
   outline: none;
@@ -50,6 +60,10 @@ body {
 
   &:not(.readonly) {
     cursor: pointer;
+  }
+
+  span {
+    flex-grow: 1;
   }
 
   &.pressed {
